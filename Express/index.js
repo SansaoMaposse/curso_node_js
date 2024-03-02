@@ -12,6 +12,10 @@ app.get('/sobre', function(req, res){
  app.get('/blog',function(req, res){
     res.send('Meu blog');
 })
+
+app.get('/ola/:nome/:cargo', function(req, res){
+    res.send('Olá');
+})
  
 
 app.listen(8090, function(){
