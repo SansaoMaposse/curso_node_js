@@ -14,7 +14,7 @@ app.get('/sobre', function(req, res){
 })
 
 app.get('/ola/:nome/:cargo', function(req, res){
-    res.send('Olá');
+    res.send(req.params);
 })
  
 
