@@ -2,19 +2,20 @@ const express = require('express');
 const app = express();
 
 app.get('/', function(req, res){
-    res.send('Seja bem-vindo ao App com Node.js');
+    res.sendFile(__dirname + "/html/index.html");
 });
 
 app.get('/sobre', function(req, res){
-    res.send('Saiba um pouco sobre me');
+    res.sendFile(__dirname + "/html/sobre.html");
 })
 
  app.get('/blog',function(req, res){
-    res.send('Meu blog');
+    res.sendFile(__dirname + "/html/blog.html");
 })
 
 app.get('/ola/:nome/:cargo', function(req, res){
-    res.send(req.params);
+    res.send("ola "+req.params.nome+"cargo "+req.params.cargo);
+  
 })
  
 
