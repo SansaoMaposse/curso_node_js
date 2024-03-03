@@ -13,4 +13,18 @@ const Postagem = sequilize.define('postagens',{
     }
 });
 
-Postagem.sync({force: true})
+const Usuario = sequilize.define('usuarios',{
+    nome:{
+        type: Sequilize.STRING
+    },
+    sobreNome:{
+        type: Sequilize.STRING
+    },
+    idade:{
+        type: Sequilize.INTEGER
+    },
+    email:{
+        type: Sequilize.STRING
+    }
+})
+Usuario.sync({force: true})
