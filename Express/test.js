@@ -12,10 +12,7 @@ const Postagem = sequilize.define('postagens',{
         type: Sequilize.TEXT
     }
 });
-// Postagem.create({
-//     titulo: "llllllllllllll",
-//     conteudo: "oooooooooooo"
-// })
+
 
 const Usuario = sequilize.define('usuarios',{
     nome:{
@@ -32,10 +29,3 @@ const Usuario = sequilize.define('usuarios',{
     }
 })
 
-// Usuario.create({
-//     nome: "Sansão",
-//     sobreNome: "Maposse",
-//     idade: 20,
-//     email: "Sansaomaposse1@gmail.com"
-// })
-// //Usuario.sync({force: true})
