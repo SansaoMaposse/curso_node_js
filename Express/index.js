@@ -1,23 +1,22 @@
 const express = require('express');
 const app = express();
+const handlebars = require('express-handlebars');
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + "/html/index.html");
+
+//Config
+//Templete Engine
+app.engine('handlebars', handlebars({
+    defaultLayout:'main'
+}));
+
+app.set('view engine', 'handlebars');
+
+//Conexão com base de dados
+const Sequilize = require('sequelize');
+const sequilize = new Sequilize('test', 'root', '',{
+    host: 'localhost',
+    dialect: 'mysql'
 });
-
-app.get('/sobre', function(req, res){
-    res.sendFile(__dirname + "/html/sobre.html");
-})
-
- app.get('/blog',function(req, res){
-    res.sendFile(__dirname + "/html/blog.html");
-})
-
-app.get('/ola/:nome/:cargo', function(req, res){
-    res.send("ola "+req.params.nome+"cargo "+req.params.cargo);
-  
-})
- 
 
 app.listen(8090, function(){
     console.log("Servidor rodando na porta 8090");
